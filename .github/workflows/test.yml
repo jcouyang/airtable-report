@@ -7,7 +7,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
-      ref: ${{ github.event.pull_request.head.sha }}
+      with:
+        ref: ${{ github.event.pull_request.head.sha }}
     - uses: ./
       with:
         airtable-token: ${{ secrets.AIRTABLE_TOKEN }}
