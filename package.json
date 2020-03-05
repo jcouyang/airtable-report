@@ -1,0 +1,37 @@
+{
+  "name": "airtable-report",
+  "version": "1.0.0",
+  "description": "Airtable Report",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint index.js",
+    "package": "ncc build index.js -o dist",
+    "test": "eslint index.js && jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jcouyang/airtable-report.git"
+  },
+  "keywords": [
+    "GitHub",
+    "Actions",
+    "Airtable",
+    "Pull Request"
+  ],
+  "author": "GitHub",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jcouyang/airtable-report/issues"
+  },
+  "homepage": "https://github.com/jcouyang/airtable-report#readme",
+  "dependencies": {
+    "@actions/core": "^1.1.1",
+    "airtable": "^0.8.1",
+    "ramda": "^0.27.0"
+  },
+  "devDependencies": {
+    "@zeit/ncc": "^0.20.5",
+    "eslint": "^6.3.0",
+    "jest": "^24.9.0"
+  }
+}

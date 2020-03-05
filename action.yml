@@ -1,0 +1,26 @@
+name: 'Airtable Report'
+description: 'Collect Pull Request Statistic to Airtable'
+inputs:
+  airtable-token:
+    description: 'Airtable API KEY'
+    required: true
+  airtable-base:
+    description: 'Table Base ID'
+    required: true
+  airtable-sheet:
+    description: 'Sheet'
+    required: true
+  airtable-picks:
+    description: 'Expression to map PR json value into table column'
+    required: false
+    default: '[["url"], ["title"], ["created_at"], ["merged_at"], ["labels"], ["comments"], ["review_comments"], ["commits"], ["additions"], ["deletions"], ["changed_files"]]'
+  airtable-traversal:
+    description: 'Traversal Json List item'
+    required: false
+    default: '{"labels": ["name"]}'
+outputs:
+  time: # output will be available to future steps 
+    id: 'Airtable record ID'
+runs:
+  using: 'node12'
+  main: 'dist/index.js'
