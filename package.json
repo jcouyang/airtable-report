@@ -26,6 +26,7 @@
   "homepage": "https://github.com/jcouyang/airtable-report#readme",
   "dependencies": {
     "@actions/core": "^1.1.1",
+    "@actions/github": "^2.1.0",
     "airtable": "^0.8.1",
     "ramda": "^0.27.0"
   },
