@@ -9,7 +9,13 @@ Report Pull Request Statistic to Airtable
 
 ## Usage
 
-You can now consume the action by referencing the v1 branch
+### 1. Create Airtable
+with the column same as this
+https://airtable.com/shrxMRmB9GV6a1TCZ
+
+You can now add action you repository you need to collect data from
+
+`.github/workflows/pull-request-statistic`
 
 ```yaml
 name: "Upload Pull Request Statistic"
@@ -30,6 +36,19 @@ jobs:
 ```
 
 See the [actions tab](https://github.com/jcouyang/airtable-report/actions) for runs of this action! :rocket:
+
+## Config
+
+```yaml
+  airtable-picks:
+    description: 'Expression to map PR json value into table column'
+    required: false
+    default: '[["url"], ["title"], ["created_at"], ["merged_at"], ["labels"], ["comments"], ["review_comments"], ["commits"], ["additions"], ["deletions"], ["changed_files"]]'
+  airtable-traversal:
+    description: 'Traversal Json List item'
+    required: false
+    default: '{"labels": ["name"]}'
+```
 
 ## Run package
 
